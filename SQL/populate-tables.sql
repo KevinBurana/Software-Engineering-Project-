@@ -22,11 +22,6 @@ create sequence UserQAns_sequence
 start with 000000
 increment by 1;
 
-drop sequence Question_sequence;
-
-create sequence Question_sequence
-start with 000000
-increment by 1;
 
 drop sequence Activity_sequence;
 
@@ -39,6 +34,8 @@ drop sequence Trail_sequence;
 create sequence Trail_sequence
 start with 000000
 increment by 1;
+
+-- Trail_sequence.nextval
 
 drop sequence Region_sequence;
 
