@@ -3,6 +3,7 @@
 	CS 458 - Fall 2019
 	10/12/2019
 */
+
 -- creating users primary key sequence
 drop sequence User_sequence;
 
@@ -31,305 +32,102 @@ create sequence Session_sequence
 start with 000000
 increment by 1;
 
--- creating Activity primary key sequence
-drop sequence Activity_sequence;
-
-create sequence Activity_sequence
-start with 000000
-increment by 1;
-
--- creating Trail primary key sequence
-drop sequence Trail_sequence;
-
-create sequence Trail_sequence
-start with 000000
-increment by 1;
-
---creating Region primary key sequence
-drop sequence Region_sequence;
-
-create sequence Region_sequence
-start with 000000
-increment by 1;
-
--- creating Wildlife primary key sequence
-drop sequence Wildlife_sequence;
-
-create sequence Wildlife_sequence
-start with 000000
-increment by 1;
-----------------------------
----- POPULATING TABLES------
-----------------------------
-
--- ***populating Activity table
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Hiking');
-
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Camping');
-
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Surfing');
-
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Fishing');
-
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Climbing');
-
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Hanging Out');
-
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Tide Pooling');
-
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Horseback Riding');
-
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Dog Walking');
-
-insert into Activity
-values
-(Activity_sequence.nextval, /*trail id*/, /* Q id*/, 'Birding');
-
--- ***populating Trail table
-
 /*
 ***BERRY GLEN TRAIL***
 Region: Orick, Elk Meadows
 Acts: hiking
 -moderate to strenuous
 -7.2 miles round trip; climb 1270 ft
-*/
 
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*/, /*region id*/, 'Berry Glen Trail');
-
-/*
 ***COSTAL TRAIL***
 Region: Prairie Creek Redwoods State Park
 Acts: hiking, camping, Carruthers Cove(only low tide)
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*/, /* region id*/, 'Coastal Trail');
 
-/* 
+
 ***RIM TRAIL***
 Region: Patrick's Point State Park
 Acts: hiking
 -both beach and forest
 -Rim trail is 2 miles along the coast
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*/, /* region id*/, 'Rim Trail');
 
-/*
 ***HAMMOND COASTAL TRAIL***
 Region: McKinleyville
 Acts: hiking, biking, running, horseback riding
 5+ miles total
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Mckinleyville*/, 'Hammond Coastal Trail');
 
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id- running*/, /* region id- Mckinleyville*/, 'Hammond Coastal Trail');
-
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id- biking*/, /* region id- Mckinleyville*/, 'Hammond Coastal Trail');
-
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id- horseback riding*/, /* region id- Mckinleyville*/, 'Hammond Coastal Trail');
-/*
 ***LOST COAST TRAIL***
-Region: Shelter Cove
+Region: Shelter Cove, King Range National Conservation Area
 Acts: hiking, camping
 4.4 miles
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id*/, 'Lost Coast Trail');
 
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- biking/, /* region id*/, 'Lost Coast Trail');
-
-/*
 ***PETROLIA***
 Region: King Range National Conservation
 Acts: hiking/backpacking, lighthouse at end
 6.4 total miles
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id*/, 'Petrolia Trail');
 
-/*
 ***EUREKA WATERFRONT TRAIL***
 Region: Humboldt Bay - Eureka
 Acts: bike, rollerblade, walk
 -easy walk, 1.5 miles along Elk River through Elk River Sanctuary
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- biking/, /* region id*/, 'Eureka Waterfront Trail');
 
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- walking/, /* region id*/, 'Eureka Waterfront Trail');
-
-/*
-***Sout Spit*** [not real name, locals call it this]
+***South Spit*** [not real name, locals call it this]
 Region: South Humboldt Bay
 Acts: hiking, beach access, picnicking, dog walking, bird watching, fishing, hunting(only during waterfowl hunting season), horseback riding
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking*/, /* region id */, 'South Spit');
 
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- dog walking/, /* region id*/, 'South Spit');
-
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- picknicking/, /* region id*/, 'South Spit');
-
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- bird watching/, /* region id*/, 'South Spit');
-
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- fishing/, /* region id*/, 'South Spit');
-
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- horsebackriding/, /* region id*/, 'South Spit');
-/*
 ***JAMES IRVINE TRAIL***
 Region: Fern Canyon/Prarie Creek
 Acts: hiking
 moderate 5 mile hike
 $8 entry fee (per person?)
-*/
 
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id*/, 'James Irvine Trail');
-
-/*
 ***GOLD BLUFFS BEACH***
 Region: Fern Canyon
 Acts: camping
-*/
 
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- camping/, /* region id- fern canyon*/, 'Gold Bluffs Beach & Campground');
-
-/*
 ***FERN CANYON TRAIL***
 Region: Fern Canyon/Redwood National Park
 Acts: hiking
 --short hike by Gold Bluffs' campsites
 --easy .75 mile loop, 20 minute hike
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- fern canyon*/, 'Fern Canyon Trail');
 
-/*
+
 ***LADY BIRD JOHNSON TRAIL***
 Region: Redwood National Park
 Acts: hiking
 -easy 1 mile loop
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Redwood National Park*/, 'Lady Bird Johnson Trail');
 
-/*
 ***CATHEDRAL TREES TRAIL***
 Region: Redwood National Park
 Acts: hiking
 -easy to moderate 1.4 
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Redwood National Park*/, 'Cathedral Trees Trail');
 
-/*
 ***LOST MAN CREEK TRAIL***
 Region: Redwood National Park
 Acts: hiking, biking
 -first 1/2 mile is easy 
 -moderate unleveled ground
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Redwood National Park*/, 'Lost Man Creek Trail');
 
-/*
 ***CAL-BARREL ROAD***
 Region: Redwood National Park
 Acts: hiking(dogs welcomed)
 - 3 mile dirt road
 - easy
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Redwood National Park*/, 'Cal-Barrel Road');
 
-/*
 ***TRILLIUM FALLS***
 Region: Redwood National Park
 Acts: hiking
 -moderate with steep grades
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Redwood National Park*/, 'Trillium Falls');
 
-/*
 ***SKUNK CABBAGE CREEK***
 Region: Redwood National Park
 Acts: hiking
 -easy, 2.8 miles round trip, longer trail option
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Redwood National Park*/, 'Skunk Cabbage Creek');
 
-/*
 ***DOLASON PRAIRIE***
 Region: Redwood National Park
 Acts: hiking
 -moderate 10 mile round trip
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Redwood National Park*/, 'Dolason Prairie');
 
-/*
 ***REDWOOD CREEK TRAIL***
 Region: Redwood National Park
 Acts: hiking
@@ -338,85 +136,551 @@ Acts: hiking
 -8 miles to Tall Tree Grove
 -two stream crossings
 -only in spring
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Redwood National Park*/, 'Redwood Creek Trail');
 
-/*
 ***TALL TREES GROVE***
 Region: Redwood National Park
 Acts: hiking
 -strenuous
 -access point Redwood Creek Trailhead on Bald Hills Road
 -permit required
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Redwood National Park*/, 'Tall Trees Grove');
 
-/*
 ***HEADWATERS FOREST TRAIL***
 Region: Eureka, Headwaters Preserve
 Acts: hiking
 -easy-moderate 11.2 miles
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id- Eureka*/, 'Headwaters Forest Trail');
 
-/*
 ***FICKLE HILL GRADE #9, BIG ROCK TRAIL***
 Region: Arcata Community Forest
 Acts: hiking
 - easy
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id*/, 'Fickle Hill Grade #9');
 
-/*
 ***BEITH LOOPS TRAIL***
 Region: Arcata Community Forest
 Acts: hiking
 -moderate
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id*/, 'Beith Loop Trail');
 
-/*
 ***FICKLE HILL GRADE TRAIL***
 Region: Arcata Community Forest
 Acts: hiking
 -moderate
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id*/, 'Fickle Hill Grade Trail');
-
-/*
 ***MAD RIVER LEVEE LOOP***
 Region: Blue Lake
 Acts: hiking
 -easy
-*/
-insert into Trail
-values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id*/, 'Mad River Levee Loop');
 
-/*
 ***KLOPP LAKE TRAIL***
 Region: Arcata Marsh & Wildlife Sanctuary
 Acts: hiking
 -easy
 */
+
+
+----------------------------
+---- POPULATING TABLES------
+----------------------------
+
+/*
+------------------------------
+***populating Activity table ***
+------------------------------
+
+Activity Legend
+'000001' = 'Hiking'
+'000002' = 'Camping'
+'000003' = 'Surfing'
+'000004' = 'Fishing'
+'000005' = 'Climbing'
+'000006' = 'Picknicking'
+'000007' = 'Tide Pooling'
+'000008' = 'Horseback Riding'
+'000009' = 'Birding'
+'000010' = 'Biking'
+*/
+insert into Activity
+values
+('000001', 'Hiking');
+
+insert into Activity
+values
+('000002', 'Camping');
+
+insert into Activity
+values
+('000003', 'Surfing');
+
+insert into Activity
+values
+('000004', 'Fishing');
+
+insert into Activity
+values
+('000005', 'Climbing');
+
+insert into Activity
+values
+('000006', 'Picknicking');
+
+insert into Activity
+values
+('000007', 'Tide Pooling');
+
+insert into Activity
+values
+('000008', 'Horseback Riding');
+
+insert into Activity
+values
+('000009', 'Birding');
+
+insert into Activity
+values
+('000010', 'Biking');
+/*
+------------------------------
+***populating Region table ***
+------------------------------
+
+Region Legend
+'000001' = 'Prairie Creek Redood State Park'
+	- Fern Canyon
+	- Elk Meadows
+'000002' = 'Patrick's Point State Park'
+'000003' = 'McKinleyville'
+'000004' = 'King Range National Conservation Area'
+'000005' = 'Eureka'
+'000006' = 'Headwaters Preserve'
+	- S. Eureka
+	- Loleta
+	- Fortuna
+'000007' = 'Redwood National Park'
+'000008' = 'Arcata'
+'000009' = 'Blue Lake'
+'000010' = 'Six Rivers National Forest'
+
+*/
+
+insert into Region
+values
+('000001', 'Prairie Creek Redood State Park');
+
+insert into Region
+values
+('000002', 'Patricks Point State Park');
+
+insert into Region
+values
+('000003', 'McKinleyville');
+
+insert into Region
+values
+('000004', 'King Range National Conservation Area');
+
+insert into Region
+values
+('000005', 'Eureka');
+
+insert into Region
+values
+('000006', 'Headwaters Preserve');
+
+insert into Region
+values
+('000007', 'Redwood National Park');
+
+insert into Region
+values
+('000008', 'Arcata');
+
+insert into Region
+values
+('000009', 'Blue Lake');
+
+insert into Region
+values
+('000010', 'Six Rivers National Forest');
+
+/*
+------------------------------
+***populating Trail table ***
+------------------------------
+Trail_id, Trail_name, Trail_dif, Trail_len
+
+beginner, easy, moderate, experienced
+*/
 insert into Trail
 values
-(Trail_sequence.nextval, /* act id*- hiking/, /* region id*/, 'Klopp Lake Trail');
+('000001', 'Berry Glen Trail', 'Moderate', '7.2');
+
+insert into Trail(Trail_id, Trail_name)
+values
+('000002', 'Coastal Trail');
+
+insert into Trail(Trail_id, Trail_name, Trail_len)
+values
+('000003', 'Rim Trail', '2.0');
+
+insert into Trail(Trail_id, Trail_name, Trail_len)
+values
+('000004', 'Hammond Coastal Trail', '5.0');
+
+insert into Trail(Trail_id, Trail_name, Trail_len)
+values
+('000005', 'Lost Coast Trail', '4.4');
+
+insert into Trail(Trail_id, Trail_name, Trail_len)
+values
+('000006', 'Petrolia Trail', '6.4');
+
+insert into Trail
+values
+('000007', 'Eureka Waterfront Trail', 'Easy', '1.5');
+
+insert into Trail(Trail_id, Trail_name)
+values
+('000008', 'South Spit');
+
+insert into Trail
+values
+('000009', 'James Irvine Trail', 'Moderate', '5.0');
+
+insert into Trail(Trail_id, Trail_name)
+values
+('000010', 'Gold Bluffs Beach & Campground');
+
+insert into Trail
+values
+('000011', 'Fern Canyon Trail', 'Beginner', '0.75');
+
+insert into Trail
+values
+('000012', 'Lady Bird Johnson Trail', 'Easy', '1.0');
+
+insert into Trail
+values
+('000013', 'Cathedral Trees Trail', 'Easy', '1.4');
+
+insert into Trail
+values
+('000014', 'Lost Man Creek Trail', 'Easy', '0.5');
+
+insert into Trail
+values
+('000015', 'Cal-Barrel Road', 'Easy', '3.0');
+
+insert into Trail(Trail_id, Trail_name, Trail_diff)
+values
+('000016', 'Trillium Falls', 'Moderate');
+
+insert into Trail
+values
+('000017', 'Skunk Cabbage Creek', 'Easy', '2.8');
+
+insert into Trail
+values
+('000018', 'Dolason Prairie', 'Moderate', '10.0');
+
+insert into Trail
+values
+('000019', 'Redwood Creek Trail #1', 'Beginner', '1.5');
+
+insert into Trail
+values
+('000027', 'Redwood Creek Trail #2', 'Experienced', '8.0');
+
+insert into Trail(Trail_id, Trail_name, Trail_diff)
+values
+('000020', 'Tall Trees Grove', 'Experienced');
+
+insert into Trail
+values
+('000021', 'Headwaters Forest Trail', 'Moderate', '11.2');
+
+insert into Trail(Trail_id, Trail_name, Trail_diff)
+values
+('000022', 'Fickle Hill Grade #9', 'Easy');
+
+insert into Trail(Trail_id, Trail_name, Trail_diff)
+values
+('000023', 'Beith Loop Trail', 'Moderate');
+
+insert into Trail(Trail_id, Trail_name, Trail_diff)
+values
+('000024', 'Fickle Hill Grade Trail', 'Moderate');
+
+insert into Trail(Trail_id, Trail_name, Trail_diff)
+values
+('000025', 'Mad River Levee Loop', 'Easy');
+
+insert into Trail(Trail_id, Trail_name, Trail_diff)
+values
+('000026', 'Klopp Lake Trail', 'Beginner');
+
+
 
 --------------------------------------------------------------------------------------
 -- populate TRegion and WRegion after Trail, Region, and Wildlife are populated.
+/*
+------------------------------
+***populating TRegion***
+------------------------------
+*/
+
+insert into TRegion
+values
+('000001', '000001');
+
+insert into TRegion
+values
+('000002', '000001');
+
+insert into TRegion
+values
+('000003', '000002');
+
+insert into TRegion
+values
+('000004', '000003');
+
+insert into TRegion
+values
+('000005', '000004');
+
+insert into TRegion
+values
+('000006', '000004');
+
+insert into TRegion
+values
+('000007', '000005');
+
+insert into TRegion
+values
+('000008', '000005');
+
+insert into TRegion
+values
+('000009', '000001');
+
+insert into TRegion
+values
+('000010', '000001');
+
+insert into TRegion
+values
+('000011', '000007');
+
+insert into TRegion
+values
+('000012', '000007');
+
+insert into TRegion
+values
+('000013', '000007');
+
+insert into TRegion
+values
+('000014', '000007');
+
+insert into TRegion
+values
+('000015', '000007');
+
+insert into TRegion
+values
+('000016', '000007');
+
+insert into TRegion
+values
+('00017', '000007');
+
+insert into TRegion
+values
+('000018', '000007');
+
+insert into TRegion
+values
+('000019', '000007');
+
+insert into TRegion
+values
+('000027', '000007');
+
+insert into TRegion
+values
+('000020', '000007');
+
+insert into TRegion
+values
+('000021', '000006');
+
+insert into TRegion
+values
+('000022', '000008');
+
+insert into TRegion
+values
+('000023', '000008');
+
+insert into TRegion
+values
+('000024', '000008');
+
+insert into TRegion
+values
+('000025', '000007');
+
+insert into TRegion
+values
+('000026', '000008');
+/*
+------------------------------
+***populating TrailAct***
+------------------------------
+*/
+
+insert into TrailAct
+values
+('000001', '000001');
+
+insert into TrailAct
+values
+('000002', '000001');
+insert into TrailAct
+values
+('000002', '000002');
+
+insert into TrailAct
+values
+('000003', '000001');
+
+insert into TrailAct
+values
+('000004', '000001');
+insert into TrailAct
+values
+('000004', '000010');
+insert into TrailAct
+values
+('000004', '000008');
+
+insert into TrailAct
+values
+('000005', '000001');
+
+insert into TrailAct
+values
+('000005', '000002');
+
+insert into TrailAct
+values
+('000006', '000001');
+
+insert into TrailAct
+values
+('000007', '000001');
+
+insert into TrailAct
+values
+('000008', '000001');
+
+insert into TrailAct
+values
+('000008', '000004');
+
+insert into TrailAct
+values
+('000008', '000006');
+
+insert into TrailAct
+values
+('000008', '000008');
+
+insert into TrailAct
+values
+('000008', '000009');
+
+insert into TrailAct
+values
+('000008', '000010');
+
+insert into TrailAct
+values
+('000009', '000001');
+
+insert into TrailAct
+values
+('000010', '000002');
+
+insert into TrailAct
+values
+('000011', '000001');
+
+insert into TrailAct
+values
+('0000012', '000001');
+
+insert into TrailAct
+values
+('000013', '000001');
+
+insert into TrailAct
+values
+('000014', '000001');
+
+insert into TrailAct
+values
+('000014', '000010');
+
+insert into TrailAct
+values
+('000015', '000001');
+
+insert into TrailAct
+values
+('000016', '000001');
+
+insert into TrailAct
+values
+('000017', '000001');
+
+insert into TrailAct
+values
+('000018', '000001');
+
+insert into TrailAct
+values
+('000019', '000001');
+
+insert into TrailAct
+values
+('000020', '000001');
+
+insert into TrailAct
+values
+('000021', '000001');
+
+insert into TrailAct
+values
+('000022', '000001');
+
+insert into TrailAct
+values
+('000023', '000001');
+
+insert into TrailAct
+values
+('000024', '000001');
+
+insert into TrailAct
+values
+('000025', '000001');
+
+insert into TrailAct
+values
+('000026', '000001');
+
+
+
 
 -----------------------------
 ---------TEST DATA-----------
