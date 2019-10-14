@@ -1,12 +1,12 @@
 /*
 	R. Tyrone Moore
 	CS 458 - Fall 2019
-	10/11/2019
+	10/14/2019
 */
 
 
 	-- User table contains all user info
-	drop table User cascade constraints;
+	drop table Users cascade constraints;
 
 	-- UserQAns table contains all the personal responses
 	drop table UserQAns cascade constraints;
@@ -14,8 +14,11 @@
 	-- Question table contains all the intial user questions (qustionare)
 	drop table Question cascade constraints;
 
+	--Session table contains info about previous session
+	drop table Sessions cascade constraints;
+
 	--Activities table contains info potential activites
-	drop table Activities cascade constraints;
+	drop table Activity cascade constraints;
 
 	--Trails table contains info on Trails
 	drop table Trail cascade constraints;
@@ -27,26 +30,25 @@
 	drop table Wildlife cascade constraints;
 
 	--TRegion table contains info about trails in the region 
-	drop table TInRegion cascade constraints;
+	drop table TRegion cascade constraints;
 
 	--WRegion table contains info about animals in the region
-	drop table WInRegion cascade constaints;
+	drop table WRegion cascade constraints;
 	
 	--ActQuest table contains info about animals 
 	drop table ActQuest cascade constraints;
 
 	--TrailAct table contains info about animals
-	drop table TrailAct cascade constaints;
+	drop table TrailAct cascade constraints;
 
-	--Session table contains info about previous session
-	drop table Session cascade constaints;
+	
 
 
-	create table User
+	create table Users
 	( User_id	char(6),
 	  phone	        char(12),
 	  email	        varchar2(30),
-	  password	varcahr2(30),
+	  password	varchar2(30),
 	  primary key	(User_id)
 	);
 
@@ -55,7 +57,7 @@
 	create table UserQAns
 	( User_qaid		char(6),
 	  User_id		char(6),
-	  Ans_date		sysdate,
+	  Ans_date		date,
 	  Q_id	        	char(6),
 	  S_id	        	char(6),
 	  Us_Act_date		char(12),
@@ -69,14 +71,13 @@
 	  Us_Outdoors_lvl  	varchar2(15),
 	  Us_Pet_q		char(1),
 	  primary key		(User_qaid),
-	  foreign key		(Q_id) references Question,
-	  foreign key		(S_id) references Session,
-	  foreign key		(User_id) references User
+	  --foreign key		(Q_id) references Question,
+	  --foreign key		(S_id) references Sessions,
+	  foreign key		(User_id) references Users
 	);
 
 	create table Question
 	( Q_id	        char(6),
-	  Act_id        char(6),
 	  User_qaid	char(6),
 	  Act_date	char(12),
 	  Forest_q	char(1),
@@ -89,11 +90,10 @@
 	  Outdoors_lvl  varchar2(15),
 	  Pet_q		char(1),
 	  primary key	(Q_id),
-	  foreign key	(User_qaid) references UserQAns,
-	  foreign key	(Act_id) references Activity
+	  foreign key	(User_qaid) references UserQAns
 	);
 
-	create table Session
+	create table Sessions
 	( S_id			char(6),
 	  User_qaid		char(6),
 	  S_Act_date		char(12),
@@ -110,47 +110,36 @@
 	  foreign key		(User_qaid) references UserQAns
 	);
 
-	create table Actvity
+	create table Activity
 	( Act_id	char(6),
-	  Trail_id	char(6),
-	  Q_id		char(6),
 	  Act_name	varchar2(80),
-	  primary key	(Act_id),
-	  foreign key	(Trail_id) references Trail,
-	  foreign key	(Q_id) references Question
+	  primary key	(Act_id)
 	);
 
 	create table Trail
 	( Trail_id	char(6),
-	  Act_id	char(6),
-	  Reg_id	char(6),
 	  Trail_name	varchar2(80),
-	  primary key	(Trail_id),
-	  foreign key	(Act_id) references Activity,
-	  foreign key	(Reg_id) references Region
+	  Trail_dif	varchar2(80),
+	  Trail_len	varchar2(80),
+	  primary key	(Trail_id)
 	);
 
 	create table Region
 	( Reg_id	char(6),
-	  Trail_id	char(6),
-	  Wild_id	char(6),
 	  Reg_name	varchar2(80),
-	  primary key	(Reg_id),
-	  foreign key	(Trail_id) references Trail,
-	  foreign key	(Wild_id) references Wildlife
+	  primary key	(Reg_id)
 	);
 
 	create table Wildlife
 	( Wild_id	char(6),
-	  Reg_id	char(6),
 	  Animal_name	varchar2(80),
-	  primary key	(Wild_id),
-	  foreign key	(Reg_id) references Region
+	  primary key	(Wild_id)
 	);
 
 	create table TRegion
 	( Trail_id	char(6),
 	  Reg_id	char(6),
+	  primary key	(Trail_id, Reg_id),
 	  foreign key   (Trail_id) references Trail,
 	  foreign key	(Reg_id) references Region	
 	);
@@ -158,6 +147,7 @@
 	create table WRegion
 	( Wild_id	char(6),
 	  Reg_id	char(6),
+	  primary key	(Wild_id, Reg_id),
 	  foreign key   (Wild_id) references Wildlife,
 	  foreign key	(Reg_id)  references Region
 	);
@@ -165,6 +155,7 @@
 	create table ActQuest
 	( Q_id	        char(6),
 	  Act_id	char(6),
+	  primary key	(Q_id, Act_id),
 	  foreign key   (Q_id) references Question,
 	  foreign key	(Act_id) references Activity
 	);
@@ -172,11 +163,13 @@
 	create table TrailAct
 	( Trail_id	char(6),
 	  Act_id	char(6),
+	  primary key	(Trail_id, Act_id),
 	  foreign key   (Trail_id) references Trail,
 	  foreign key	(Act_id) references Activity
 	);
 
-
+	alter table UserQAns add foreign key (Q_id) references Question(Q_id);
+	alter table UserQAns add foreign key (S_id) references Sessions(S_id);
 
 
 
