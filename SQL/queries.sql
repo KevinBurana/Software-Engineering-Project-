@@ -22,6 +22,12 @@ from Activity a, Trail t, Region r
 where a.Trail_id = t.Trail_id
 and   t.Reg_id = r.Reg_id;
 
---Query: Selects all the Climbing activities in a Region
+--Query: Selects all the Biking activities in a Region
 
-select 
+select Act_Id
+from Activity a, Trail t, Region r
+where a.Trail_id = t.Trail_id
+and   t.Reg_id = r.Reg_id
+and   Act_id = 000010;
+
+
