@@ -30,4 +30,12 @@ where a.Trail_id = t.Trail_id
 and   t.Reg_id = r.Reg_id
 and   Act_id = 000010;
 
+--Query: Selects all the regions that contain a certain type of activity.
+
+select reg_name
+from Region r, Activity a, Trail t
+where r.Trail_ID = t.Trail_ID
+and   a.reg_ID = r.reg_id.
+
+
 
