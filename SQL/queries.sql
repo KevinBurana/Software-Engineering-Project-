@@ -1,7 +1,7 @@
 /******
 * Shaan Bhatt
 * Activity Finder
-* Last Edited: 10-5-19  
+* Last Edited: 10-19-19  
 ******/
 
 --Query: Find all associated trails in a region.
@@ -35,7 +35,12 @@ and   Act_id = 000010;
 select reg_name
 from Region r, Activity a, Trail t
 where r.Trail_ID = t.Trail_ID
-and   a.reg_ID = r.reg_id.
+and   a.reg_ID = r.reg_id;
+
+--Query: Selects all the questions that have been answered by a user.
+select * 
+from userQAns;
+
 
 
 
