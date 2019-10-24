@@ -45,7 +45,7 @@
 
 
 	create table Users
-	( User_id	char(6),
+	( User_id	char(6) not null,
 	  phone	        char(12),
 	  email	        varchar2(30),
 	  password	varchar2(30),
@@ -55,11 +55,11 @@
 	
 
 	create table UserQAns
-	( User_qaid		char(6),
-	  User_id		char(6),
+	( User_qaid		char(6) not null,
+	  User_id		char(6) not null,
 	  Ans_date		date,
-	  Q_id	        	char(6),
-	  S_id	        	char(6),
+	  Q_id        	char(6),
+	  S_id        	char(6),
 	  Us_Act_date		char(12),
 	  Us_Forest_q		char(1),
 	  Us_Beach_q		char(1),
@@ -71,14 +71,16 @@
 	  Us_Outdoors_lvl  	varchar2(15),
 	  Us_Pet_q		char(1),
 	  primary key		(User_qaid),
-	  --foreign key		(Q_id) references Question,
-	  --foreign key		(S_id) references Sessions,
-	  foreign key		(User_id) references Users
+/*
+	foreign key		(Q_id) references Question,
+	 foreign key		(S_id) references Sessions,
+*/
+	  foreign key		(User_id) references Users(User_id)
 	);
 
 	create table Question
-	( Q_id	        char(6),
-	  User_qaid	char(6),
+	( Q_id	        char(6) not null,
+	  User_qaid	char(6) not null,
 	  Act_date	char(12),
 	  Forest_q	char(1),
 	  Beach_q	char(1),
@@ -168,9 +170,10 @@
 	  foreign key	(Act_id) references Activity
 	);
 
+/*
 	alter table UserQAns add foreign key (Q_id) references Question(Q_id);
 	alter table UserQAns add foreign key (S_id) references Sessions(S_id);
-
+*/
 
 
 

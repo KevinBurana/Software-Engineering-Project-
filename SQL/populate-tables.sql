@@ -5,32 +5,90 @@
 */
 
 -- creating users primary key sequence
-drop sequence User_sequence;
+drop sequence Users_sequence;
 
-create sequence User_sequence
-start with 000000
+create sequence Users_sequence
+start with 000001
 increment by 1;
 
 -- creating UserQAns primary key sequence
 drop sequence UserQAns_sequence;
 
 create sequence UserQAns_sequence
-start with 000000
+start with 000001
 increment by 1;
 
 -- creating Question primary key sequence
 drop sequence Question_sequence;
 
 create sequence Question_sequence
-start with 000000
+start with 000001
 increment by 1;
 
 -- creating Session primary key sequence
 drop sequence Session_sequence;
 
 create sequence Session_sequence
-start with 000000
+start with 000001
 increment by 1;
+
+delete from TrailAct;
+delete from ActQuest;
+delete from WRegion;
+delete from TRegion;
+delete from Wildlife;
+delete from Region;
+delete from Trail;
+delete from Activity;
+delete from Sessions;
+delete from Question;
+delete from UserQAns;
+delete from Users;
+
+-----------------------------
+---------TEST DATA-----------
+-----------------------------
+
+-- inserting test Users
+insert into Users
+values
+('000000', '777777777777', 'testaccount1@gmail.com', 'password');
+
+insert into Users
+values
+('222222', '555555555555', 'testaccount2@gmail.com', 'password');
+
+insert into Users
+values
+('333333', '666666666666', 'testaccount3@gmail.com', 'password');
+
+insert into UserQAns
+values
+('123456', '222222', '09-May-2019', '111111', '111111', '123456789012', '0', '0', '0', '0', '0', '0', '1 hour', 'beginner', '0');
+-- inserting test data into UserQAns
+--insert into UserQAns
+--values
+--('123456', '000000', '09-Apr-2019', '111111', '111111', '120123420192','1', '0', '0', '1', '1', '0', '1 hour', 'moderate', '0');
+
+-- inserting test values into Question
+insert into Question
+values
+('111111', '123456', '120123420192', '1', '0', '0', '1', '1', '0', '1 hour', 'moderate', '0');
+-- inserting test values into Session
+insert into Sessions
+values
+('111111', '123456', '120123420192', '1', '0', '0', '1', '1', '0', '1 hour', 'moderate', '0');
+
+insert into UserQAns
+values
+('222222', '222222', '09-Apr-2019', '111111', '111111', '120123420192', '0', '1', '0', '0', '1', '0', '3 hours', 'experienced', '1');
+
+insert into UserQAns
+values
+('333333', '333333', '09-Apr-2019', '111111', '111111', '120123420192', '0', '1', '0', '1', '0', '0', '1 hour', 'moderate', '0');
+
+
+
 
 /*
 ***BERRY GLEN TRAIL***
@@ -345,7 +403,7 @@ values
 
 insert into Trail(Trail_id, Trail_name)
 values
-('000010', 'Gold Bluffs Beach & Campground');
+('000010', 'Gold Bluffs Beach and Campground');
 
 insert into Trail
 values
@@ -367,7 +425,7 @@ insert into Trail
 values
 ('000015', 'Cal-Barrel Road', 'Easy', '3.0');
 
-insert into Trail(Trail_id, Trail_name, Trail_diff)
+insert into Trail(Trail_id, Trail_name, Trail_dif)
 values
 ('000016', 'Trillium Falls', 'Moderate');
 
@@ -387,7 +445,7 @@ insert into Trail
 values
 ('000027', 'Redwood Creek Trail #2', 'Experienced', '8.0');
 
-insert into Trail(Trail_id, Trail_name, Trail_diff)
+insert into Trail(Trail_id, Trail_name, Trail_dif)
 values
 ('000020', 'Tall Trees Grove', 'Experienced');
 
@@ -395,23 +453,23 @@ insert into Trail
 values
 ('000021', 'Headwaters Forest Trail', 'Moderate', '11.2');
 
-insert into Trail(Trail_id, Trail_name, Trail_diff)
+insert into Trail(Trail_id, Trail_name, Trail_dif)
 values
 ('000022', 'Fickle Hill Grade #9', 'Easy');
 
-insert into Trail(Trail_id, Trail_name, Trail_diff)
+insert into Trail(Trail_id, Trail_name, Trail_dif)
 values
 ('000023', 'Beith Loop Trail', 'Moderate');
 
-insert into Trail(Trail_id, Trail_name, Trail_diff)
+insert into Trail(Trail_id, Trail_name, Trail_dif)
 values
 ('000024', 'Fickle Hill Grade Trail', 'Moderate');
 
-insert into Trail(Trail_id, Trail_name, Trail_diff)
+insert into Trail(Trail_id, Trail_name, Trail_dif)
 values
 ('000025', 'Mad River Levee Loop', 'Easy');
 
-insert into Trail(Trail_id, Trail_name, Trail_diff)
+insert into Trail(Trail_id, Trail_name, Trail_dif)
 values
 ('000026', 'Klopp Lake Trail', 'Beginner');
 
@@ -491,7 +549,7 @@ values
 
 insert into TRegion
 values
-('00017', '000007');
+('000017', '000007');
 
 insert into TRegion
 values
@@ -617,7 +675,7 @@ values
 
 insert into TrailAct
 values
-('0000012', '000001');
+('000012', '000001');
 
 insert into TrailAct
 values
@@ -679,40 +737,13 @@ insert into TrailAct
 values
 ('000026', '000001');
 
+/*
+------------------------------
+***populating WRegion***
+------------------------------
+can insert link to fish and wildlife brochure of wildlife
+*/
 
 
 
------------------------------
----------TEST DATA-----------
------------------------------
 
--- inserting test Users
-insert into Users
-values
-('111111', '7777777777', 'testaccount1@gmail.com', 'password');
-
-insert into Users
-values
-('111112', '5555555555', 'testaccount2@gmail.com', 'password');
-
-insert into Users
-values
-('111113', '6666666666', 'testaccount3@gmail.com', 'password');
-
--- inserting test data into UserQAns
-insert into UserQAns
-values
-(UserQAns_sequence.nextval, '1111111', sysdate, '111111', '111111', sysdate, '1', '0', '0', '1', '1', '0', '1 hour', 'moderate', '0');
-
-insert into UserQAns
-values
-(UserQAns_sequence.nextval, '1111111', sysdate, '111111', '111111', sysdate, '0', '1', '0', '0', '1', '0', '3 hours', 'experienced', '1');
-
-insert into UserQAns
-values
-(UserQAns_sequence.nextval, '1111111', sysdate, '111111', '111111', sysdate, '0', '1', '0', '1', '0', '0', '1 hour', 'moderate', '0');
-
--- inserting test values into Question
-insert into Question
-values
-(UserQAns_sequence.nextval, '1111111', sysdate, '111111', '111111', sysdate, '1', '0', '0', '1', '1', '0', '1 hour', 'moderate', '0');
