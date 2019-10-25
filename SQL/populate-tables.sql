@@ -299,7 +299,7 @@ values
 ------------------------------
 
 Region Legend
-'000001' = 'Prairie Creek Redood State Park'
+'000001' = 'Prairie Creek Redwood State Park'
 	- Fern Canyon
 	- Elk Meadows
 '000002' = 'Patrick's Point State Park'
@@ -319,7 +319,7 @@ Region Legend
 
 insert into Region
 values
-('000001', 'Prairie Creek Redood State Park');
+('000001', 'Prairie Creek Redwood State Park');
 
 insert into Region
 values
@@ -473,10 +473,37 @@ insert into Trail(Trail_id, Trail_name, Trail_dif)
 values
 ('000026', 'Klopp Lake Trail', 'Beginner');
 
+/*
+------------------------------
+***populating Wildlife***
+------------------------------
+*/
+
+insert into Wildlife
+values
+('000001', 'Black Bears');
+
+insert into Wildlife
+values
+('000002', 'Cougars');
+
+insert into Wildlife
+values
+('000003', 'Elk');
+
+insert into Wildlife
+values
+('000004', 'Bobcats');
+
+insert into Wildlife
+values
+('000005', 'Coyotes');
+
+insert into Wildlife
+values
+('000006', 'Seals and Sea Lions');
 
 
---------------------------------------------------------------------------------------
--- populate TRegion and WRegion after Trail, Region, and Wildlife are populated.
 /*
 ------------------------------
 ***populating TRegion***
@@ -590,6 +617,129 @@ values
 insert into TRegion
 values
 ('000026', '000008');
+
+/*
+------------------------------
+***populating WRegion***
+------------------------------
+*/
+
+insert into WRegion
+values
+('000003', '000001');
+
+insert into WRegion
+values
+('000001', '000002');
+
+insert into WRegion
+values
+('000002', '000003');
+
+insert into WRegion
+values
+('000004', '000003');
+
+insert into WRegion
+values
+('000005', '000002');
+
+insert into WRegion
+values
+('000002', '000004');
+
+insert into WRegion
+values
+('000004', '000004');
+
+insert into WRegion
+values
+('000005', '000004');
+
+insert into WRegion
+values
+('000002', '000005');
+
+insert into WRegion
+values
+('000004', '000005');
+
+insert into WRegion
+values
+('000005', '000005');
+
+insert into WRegion
+values
+('000002', '000006');
+
+insert into WRegion
+values
+('000004', '000006');
+
+insert into WRegion
+values
+('000005', '000006');
+
+insert into WRegion
+values
+('000001', '000007');
+
+insert into WRegion
+values
+('000002', '000007');
+
+insert into WRegion
+values
+('000003', '000007');
+
+insert into WRegion
+values
+('000004', '000007');
+
+insert into WRegion
+values
+('000005', '000007');
+
+insert into WRegion
+values
+('000002', '000008');
+
+insert into WRegion
+values
+('000004', '000008');
+
+insert into WRegion
+values
+('000005', '000008');
+
+insert into WRegion
+values
+('000001', '000009');
+
+insert into WRegion
+values
+('000002', '000009');
+
+insert into WRegion
+values
+('000004', '000009');
+
+insert into WRegion
+values
+('000005', '000009');
+
+insert into WRegion
+values
+('000002', '000010');
+
+insert into WRegion
+values
+('000004', '000010');
+
+insert into WRegion
+values
+('000005', '000010');
+
 /*
 ------------------------------
 ***populating TrailAct***
