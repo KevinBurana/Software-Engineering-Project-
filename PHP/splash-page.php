@@ -1,3 +1,7 @@
+<?php
+   session_start();
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -5,15 +9,20 @@
     by: Ashleigh, Kevin, Shaan, Tyrone
     last modified: 10-14-2019
 
-    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/splash-page.html
+    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/splash-page.pho
 
 -->
 
 <head>
+
+    <?php
+	   require_once("request-login.php");
+	?>
+    
     <title> Take A Hike! </title>
     <meta charset="utf-8" />
 
-        <link href="https://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
+    <link href="https://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
           type="text/css" rel="stylesheet" />
 	<link href="https://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/column.css"
           type="text/css" rel="stylesheet" />
@@ -22,15 +31,11 @@
 
 <body>
 
-    <center> <h1> Choose Your Adventure </h1> </center>
+    <center> <h1> Welcome To Your Adventure </h1> </center>
 
     <hr />
 
-    <div class="container">
-       <img src="ossagon.jpg" width="960" height="640" />
-       <img src="smith-river.jpg" width="960" height="640" />
-       <img src="trinidad.jpg" width="960" height="640" />
-    </div>
+    
 
     <p>
         Validate by pasting .xhtml copy's URL into<br />
