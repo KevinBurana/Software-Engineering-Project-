@@ -32,7 +32,7 @@
     <hr />
 
     <?php
-      require_once("sign-up.html");
+      
       require_once("log-in.html");
     ?>
 
