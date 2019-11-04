@@ -68,7 +68,7 @@ span.psw {
 }
 
 /* The Modal (background) */
-.modal {
+.modal_login {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -138,7 +138,7 @@ span.psw {
 
 <button for="button_login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
-<div id="id01" class="modal">
+<div id="id01" class="modal_login">
   
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
@@ -154,10 +154,7 @@ span.psw {
       <input type="password_login" placeholder="Enter Password" name="psw" required>
         
       <button for="button_login" type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
+      </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <button for="button_login" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn_login">Cancel</button>
@@ -168,12 +165,12 @@ span.psw {
 
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
+var modal_login = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == modal_login) {
+        modal_login.style.display = "none";
     }
 }
 </script>
