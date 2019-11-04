@@ -1,6 +1,3 @@
-<?php
-   session_start();
-?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,10 +16,7 @@
     <meta charset="utf-8" />
 
     <link href="https://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
-          type="text/css" rel="stylesheet" />
-    <link href="https://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/column.css"
-          type="text/css" rel="stylesheet" />
-	
+          type="text/css" rel="stylesheet" />	
 </head>
 
 <body>
@@ -32,7 +26,7 @@
     <hr />
 
     <?php
-      
+      require_once("sign-up.html");
       require_once("log-in.html");
     ?>
 
