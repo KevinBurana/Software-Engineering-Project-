@@ -134,11 +134,11 @@ function signup()
 {
    ?>
    <body>
-       <button for="button_signup" onclick="document.getElementById('id011').style.display='block'" style="width:auto;">Sign Up</button>
+       <button for="button_signup" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
 
-       <div id="id011" class="modal_signup">
-           <span onclick="document.getElementById('id011').style.display='none'" class="close_signup" title="Close Modal">&times;</span>
-           <form class="modal-content-signup" action="/action_page.php">
+       <div id="id02" class="modal_signup">
+           <span onclick="document.getElementById('id02').style.display='none'" class="close_signup" title="Close Modal">&times;</span>
+           <form class="modal-content-signup" action="/activities.php">
        <div class="container_signup">
          <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
@@ -155,7 +155,7 @@ function signup()
       	    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
       <div class="clearfix">
-        <button type="button_signup" onclick="document.getElementById('id011').style.display='none'" class="cancelbtn_signup">Cancel</button>
+        <button type="button_signup" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn_signup">Cancel</button>
         <button for="button_signup" type="submit" class="signupbtn">Sign Up</button>
       </div>
     </div>
@@ -164,7 +164,7 @@ function signup()
 
 <script>
 // Get the modal
-var modal_signup = document.getElementById('id011');
+var modal_signup = document.getElementById('id02');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
