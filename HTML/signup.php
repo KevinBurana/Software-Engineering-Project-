@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 10-14-2019
+    last modified: 11-06-2019
 
     you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/splash.php
 
 -->
 
-<head>
-    
-    <title> Take A Hike! </title>
-    <meta charset="utf-8" />
-
-    <link href="https://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
-          type="text/css" rel="stylesheet" />	
-</head>
 <style>
 
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -130,27 +119,40 @@ hr {
   }
 }
 </style>
-<body>
 
-<button for="button_signup" onclick="document.getElementById('id011').style.display='block'" style="width:auto;">Sign Up</button>
+<?php
+/*====
+function sign-up()
+{
+   ?>
+   <p Called sign-up function </p>
+   <?php
+}
+====*/
 
-<div id="id011" class="modal_signup">
-  <span onclick="document.getElementById('id011').style.display='none'" class="close_signup" title="Close Modal">&times;</span>
-  <form class="modal-content-signup" action="/action_page.php">
-    <div class="container_signup">
-      <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
+function signup()
+{
+   ?>
+   <body>
+       <button for="button_signup" onclick="document.getElementById('id011').style.display='block'" style="width:auto;">Sign Up</button>
+
+       <div id="id011" class="modal_signup">
+           <span onclick="document.getElementById('id011').style.display='none'" class="close_signup" title="Close Modal">&times;</span>
+           <form class="modal-content-signup" action="/action_page.php">
+       <div class="container_signup">
+         <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
       <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text_signup" placeholder="Enter Email" name="email" required>
+      	    <label for="email"><b>Email</b></label>
+      	    <input type="text_signup" placeholder="Enter Email" name="email" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password_signup" placeholder="Enter Password" name="psw" required>
+      	    <label for="psw"><b>Password</b></label>
+      	    <input type="password_signup" placeholder="Enter Password" name="psw" required>
 
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password_signup" placeholder="Repeat Password" name="psw-repeat" required>
+      	    <label for="psw-repeat"><b>Repeat Password</b></label>
+      	    <input type="password_signup" placeholder="Repeat Password" name="psw-repeat" required>
       
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      	    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
       <div class="clearfix">
         <button type="button_signup" onclick="document.getElementById('id011').style.display='none'" class="cancelbtn_signup">Cancel</button>
@@ -171,6 +173,7 @@ window.onclick = function(event) {
   }
 }
 </script>
-
 </body>
-</html>
+<?php
+}
+?>

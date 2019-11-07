@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 10-30-2019
+    last modified: 11-06-2019
 
     you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/log-in.html
 
 -->
 
-<head>
-    
-    <title> Take A Hike! </title>
-    <meta charset="utf-8" />
-	
-</head>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 
@@ -133,18 +124,29 @@ span.psw {
   }
 }
 </style>
-</head>
-<body>
 
-<button for="button_login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<?php
+/*====
+function login()
+{
+   ?>
+   <p Called login function </p>
+   <?php
+}
+====*/
 
-<div id="id01" class="modal_login">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close_login" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
+function login()
+{
+   ?>
+   <body>
+        <button for="button_login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+	<div id="id01" class="modal_login">
+            <form class="modal-content animate" action="activities.php" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+               <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
@@ -174,6 +176,7 @@ window.onclick = function(event) {
     }
 }
 </script>
-
 </body>
-</html>
+<?php
+}
+?>

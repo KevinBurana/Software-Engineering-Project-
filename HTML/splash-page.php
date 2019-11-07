@@ -1,3 +1,6 @@
+<?php
+   session_start();
+?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,6 +18,13 @@
     <title> Take A Hike! </title>
     <meta charset="utf-8" />
 
+    <?php
+       require_once("signup.php");
+       require_once("login.php");
+       require_once("hsu_conn.php");
+    ?>
+
+    
     <link href="https://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
           type="text/css" rel="stylesheet" />	
 </head>
@@ -26,10 +36,14 @@
     <hr />
 
     <?php
-      require_once("sign-up.html");
-      require_once("log-in.html");
+   
+    if ( ! array_key_exists("next_state", $_SESSION) )
+    {
+        signup();
+        login();
+        $_SESSION["next_state"] = "activities";
+    }
     ?>
-
 
 </body>
 </html>
