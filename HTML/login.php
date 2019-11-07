@@ -2,7 +2,7 @@
     by: Ashleigh, Kevin, Shaan, Tyrone
     last modified: 11-06-2019
 
-    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/log-in.html
+    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/login.html
 
 -->
 
@@ -28,6 +28,11 @@ button[for=button_login] {
   border: none;
   cursor: pointer;
   width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
 }
 
 /* Extra styles for the cancel button */
@@ -119,7 +124,7 @@ span.psw {
      display: block;
      float: none;
   }
-  .cancelbtn {
+  .cancelbtn_login {
      width: 100%;
   }
 }
