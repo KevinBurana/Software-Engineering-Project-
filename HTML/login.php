@@ -120,7 +120,7 @@ span.psw {
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-  span.psw {
+  span.psw_login {
      display: block;
      float: none;
   }
@@ -165,7 +165,7 @@ function login()
 
     <div class="container" style="background-color:#f1f1f1">
       <button for="button_login" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn_login">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <span class="psw_login">Forgot <a href="#">password?</a></span>
     </div>
   </form>
 </div>

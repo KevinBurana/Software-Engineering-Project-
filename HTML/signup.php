@@ -28,7 +28,7 @@ input[type=text_signup]:focus, input[type=password_signup]:focus {
 }
 
 /* Set a style for all buttons */
-button[for=button_signup] {
+button {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -134,10 +134,10 @@ function signup()
 {
    ?>
    <body>
-       <button for="button_signup" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+       <button for="button_signup" onclick="document.getElementById('id011').style.display='block'" style="width:auto;">Sign Up</button>
 
-       <div id="id02" class="modal_signup">
-           <span onclick="document.getElementById('id02').style.display='none'" class="close_signup" title="Close Modal">&times;</span>
+       <div id="id011" class="modal_signup">
+           <span onclick="document.getElementById('id011').style.display='none'" class="close_signup" title="Close Modal">&times;</span>
            <form class="modal-content-signup" action="/activities.php">
        <div class="container_signup">
          <h1>Sign Up</h1>
@@ -145,6 +145,9 @@ function signup()
       <hr>
       	    <label for="email"><b>Email</b></label>
       	    <input type="text_signup" placeholder="Enter Email" name="email" required>
+
+            <label for="phone_num"><b>Phone Number</b></label>
+      	    <input type="text_signup" placeholder="Enter Phone Number" name="phone" required>
 
       	    <label for="psw"><b>Password</b></label>
       	    <input type="password_signup" placeholder="Enter Password" name="psw" required>
@@ -155,7 +158,7 @@ function signup()
       	    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
       <div class="clearfix">
-        <button type="button_signup" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn_signup">Cancel</button>
+        <button type="button" onclick="document.getElementById('id011').style.display='none'" class="cancelbtn_signup">Cancel</button>
         <button for="button_signup" type="submit" class="signupbtn">Sign Up</button>
       </div>
     </div>
@@ -164,7 +167,7 @@ function signup()
 
 <script>
 // Get the modal
-var modal_signup = document.getElementById('id02');
+var modal_signup = document.getElementById('id011');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
