@@ -9,8 +9,6 @@
             returns the resulting connection object if
             successful, and... CAN this end document and exit calling 
             PHP if NOT successful?!
-
-        uses: 328footer.html
     -----*/
 
     function hsu_conn($usr, $pwd)
@@ -34,9 +32,8 @@
             ?>
             session_destroy();
             <p> Could not log into Oracle, sorry. </p>
-            <p> Click <a href="http://nrs-projects.humboldt.edu/~kb2017/hw10/need-an-order-hw10.php">here</a> to start over. </p>
+            <p> Click <a href="http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/splash-page.php">here</a> to start over. </p>
         <?php
-            require_once("328footer.html");
             exit;        
         }
         return $connctn;

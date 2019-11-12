@@ -1,8 +1,8 @@
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 11-06-2019
+    last modified: 11-11-2019
 
-    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/login.html
+    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/login.php
 
 -->
 
@@ -54,7 +54,7 @@ img.avatar {
   border-radius: 50%;
 }
 
-.container {
+.container_login {
   padding: 16px;
 }
 
@@ -153,7 +153,7 @@ function login()
                <img src="img_avatar2.png" alt="Avatar" class="avatar">
         </div>
 
-    <div class="container">
+    <div class="container_login">
       <label for="uname"><b>Username</b></label>
       <input type="text_login" placeholder="Enter Username" name="uname" required>
 
@@ -163,7 +163,7 @@ function login()
       <button for="button_login" type="submit">Login</button>
       </div>
 
-    <div class="container" style="background-color:#f1f1f1">
+    <div class="container_login" style="background-color:#f1f1f1">
       <button for="button_login" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn_login">Cancel</button>
       <span class="psw_login">Forgot <a href="#">password?</a></span>
     </div>

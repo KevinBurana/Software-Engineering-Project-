@@ -7,7 +7,7 @@
 
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 10-14-2019
+    last modified: 11-11-2019
 
     you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/splash-page.php
 
