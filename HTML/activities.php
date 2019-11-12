@@ -14,6 +14,11 @@
     <title> Take A Hike! </title>
     <meta charset="utf-8" />
 
+    <?php
+       require_once("hover_menu.php");
+    ?>
+
+
     <link href="https://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
           type="text/css" rel="stylesheet" />	
 </head>
@@ -21,6 +26,10 @@
 <body>
 
     <center> <h1> Activities </h1> </center>
+
+    <?php
+      hover_menu();
+    ?>
 
     <hr />
 
