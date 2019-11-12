@@ -5,7 +5,7 @@
     by: Ashleigh, Kevin, Shaan, Tyrone
     last modified: 11-07-2019
 
-    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/activities.php
+    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/suggested_trails.php
 
 -->
 
@@ -14,10 +14,6 @@
     <title> Take A Hike! </title>
     <meta charset="utf-8" />
 
-    <?php
-       require_once("hover_menu.php");
-    ?>
-
 
     <link href="https://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
           type="text/css" rel="stylesheet" />	
@@ -25,13 +21,10 @@
 
 <body>
 
-    <center> <h1> Activities </h1> </center>
+    <center> <h1> What We Suggest For Today... </h1> </center>
+
 
     <hr />
-
-    <?php
-      hover_menu();
-    ?>
 
 </body>
 </html>
