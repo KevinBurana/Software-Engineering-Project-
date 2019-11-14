@@ -1,11 +1,12 @@
 /* Ashleigh Robie
 CS 458 - Trail Expert System
-Last modified: 10-31-2019 */
+Last modified: 11-14-2019 */
 
 
 %% FACTS 
 
 %% trail KB
+/*
 trail(000001).
 trail(000002).
 trail(000003).
@@ -32,6 +33,9 @@ trail(000023).
 trail(000024).
 trail(000025).
 trail(000026).
+*/
+
+
 
 %% trail difficulty
 tDifficulty(beginner).
@@ -40,9 +44,25 @@ tDifficulty(moderate).
 tDifficulty(experienced).
 
 %% user experience level
-experience(beginner).
-experience(moderate).
-experience(experienced).
+uExperience(beginner).
+uExperience(moderate).
+uExperience(experienced).
 
+%% pet adventure: 0 - no pet; 1 - pet 
+petGo(0).
+petGo(1).
+
+%% duration outside; turn into minutes? given in hours
+activityDuration().
+
+%% check what weather sites use
+%% weather forecast
+forecast(sunny).
+forecast(cloudy).
+forecast(foggy).
+forecast(snow).
+forecast(rain).
+forecast(showers).
 
 %% RULES 
+
