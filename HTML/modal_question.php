@@ -11,7 +11,7 @@ body[for="body_question"] {font-family: Arial, Helvetica, sans-serif;}
 
 button[for="button_question"]
 {
-  background-color: #4CAF50;
+  background-color: #21781d;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -52,7 +52,7 @@ button[for="button_question"]
   font-weight: bold;
 }
 
-.clos_questione:hover,
+.close_question:hover,
 .close_question:focus {
   color: #000;
   text-decoration: none;

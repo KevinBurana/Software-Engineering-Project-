@@ -29,7 +29,7 @@ input[type=text_signup]:focus, input[type=password_signup]:focus {
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
+  background-color: #21781d;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;

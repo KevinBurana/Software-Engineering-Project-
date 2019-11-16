@@ -10,7 +10,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
-input[type=text_login], input[type=password_login] {
+input[type=text_login], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -21,7 +21,7 @@ input[type=text_login], input[type=password_login] {
 
 /* Set a style for all buttons */
 button[for=button_login] {
-  background-color: #4CAF50;
+  background-color: #21781d;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -158,7 +158,7 @@ function login()
       <input type="text_login" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password_login" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="psw" required>
         
       <button for="button_login" type="submit">Login</button>
       </div>
