@@ -3,7 +3,7 @@
 
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 11-07-2019
+    last modified: 11-15-2019
 
     you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/suggested_trails.php
 

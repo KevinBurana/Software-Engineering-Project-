@@ -147,7 +147,7 @@ function login()
         <button for="button_login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 	<div id="id01" class="modal_login">
-            <form class="modal-content animate" action="activities.php" method="post">
+            <form class="modal-content animate" action="home.php" method="post">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close_login" title="Close Modal">&times;</span>
                <img src="img_avatar2.png" alt="Avatar" class="avatar">

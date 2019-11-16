@@ -1,9 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+    by: Ashleigh, Kevin, Shaan, Tyrone
+    last modified: 11-15-2019
+
+    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/modal-question.php
+
+-->
+
 <style>
 body[for="body_question"] {font-family: Arial, Helvetica, sans-serif;}
+
+button[for="button_question"]
+{
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
 
 /* The Modal (background) */
 .modal_question {
@@ -46,24 +59,37 @@ body[for="body_question"] {font-family: Arial, Helvetica, sans-serif;}
   cursor: pointer;
 }
 </style>
-</head>
-<body>
 
-<!-- Trigger/Open The Modal -->
-<button id="myBtn_question" for="button_question">Take The Questionare</button>
+<?php
+/*====
+function modal_question()
+{
+   ?>
+   <p Called modal question </p>
+   <?php
+}
+====*/
 
-<!-- The Modal -->
-<div id="myModal_question" class="modal_question">
+function modal_question()
+{
+   ?>
+   <body>
 
-  <!-- Modal content -->
-  <div class="modal-content-question">
-    <span class="close_question">&times;</span>
-    <?php
-       require_once("questions.html");
-    ?>
-  </div>
+   <!-- Trigger/Open The Modal -->
+   <button id="myBtn_question" for="button_question">Take The Questionare</button>
 
-</div>
+   <!-- The Modal -->
+   <div id="myModal_question" class="modal_question">
+
+     <!-- Modal content -->
+     <div class="modal-content-question">
+       <span class="close_question">&times;</span>
+          <?php
+             require_once("questions.html");
+          ?>
+     </div>
+
+   </div>
 
 <script>
 // Get the modal
@@ -92,6 +118,7 @@ window.onclick = function(event) {
   }
 }
 </script>
-
 </body>
-</html>
+<?php
+}
+?>

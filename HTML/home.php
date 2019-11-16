@@ -5,7 +5,7 @@
     by: Ashleigh, Kevin, Shaan, Tyrone
     last modified: 11-07-2019
 
-    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/activities.php
+    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/home.php
 
 -->
 
@@ -16,6 +16,7 @@
 
     <?php
        require_once("hover_menu.php");
+       require_once("modal_question.php");
     ?>
 
 
@@ -25,12 +26,13 @@
 
 <body>
 
-    <center> <h1> Activities </h1> </center>
+    <center> <h1> Humboldt Hike! </h1> </center>
 
     <hr />
 
     <?php
       hover_menu();
+      modal_question();
     ?>
 
 </body>
