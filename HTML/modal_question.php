@@ -27,7 +27,7 @@ button[for="button_question"]
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  height: ; /* Full height */
+  height: 100% ; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -76,7 +76,7 @@ function modal_question()
    <body>
 
    <!-- Trigger/Open The Modal -->
-   <button id="myBtn_question" for="button_question">Take The Questionare</button>
+   <button id="myBtn_question" for="button_question">Take The Questionnaire</button>
 
    <!-- The Modal -->
    <div id="myModal_question" class="modal_question">
