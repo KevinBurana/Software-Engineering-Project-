@@ -1,6 +1,6 @@
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 11-15-2019
+    last modified: 11-29-201
 
     you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/modal-question.php
 
@@ -27,11 +27,11 @@ button[for="button_question"]
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  height: 100% ; /* Full height */
+  height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 0px);
 }
 
 

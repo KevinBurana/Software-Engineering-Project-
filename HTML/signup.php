@@ -1,6 +1,6 @@
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 11-15-2019
+    last modified: 11-29-2019
 
     you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/signup.php
 
@@ -8,7 +8,7 @@
 
 <style>
 
-body {font-family: Arial, Helvetica, sans-serif;}
+body[for="body_signup"] {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
 /* Full-width input fields */
@@ -35,7 +35,6 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
   opacity: 0.9;
 }
 
@@ -82,12 +81,6 @@ button:hover {
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
-
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
  
 /* The Close Button (x) */
 .close_signup {
@@ -133,12 +126,13 @@ function sign-up()
 function signup()
 {
    ?>
-   <body>
+   <body for="body_signup">
        <button for="button_signup" onclick="document.getElementById('id011').style.display='block'" style="width:auto;">Sign Up</button>
 
        <div id="id011" class="modal_signup">
            <span onclick="document.getElementById('id011').style.display='none'" class="close_signup" title="Close Modal">&times;</span>
-           <form class="modal-content-signup" action="/activities.php">
+           <form class="modal-content-signup" method="post" action="<?= htmlentities($_SERVER['PHP_SELF'], 
+                                        ENT_QUOTES) ?>">
        <div class="container_signup">
          <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
@@ -158,7 +152,7 @@ function signup()
       	    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
       <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id011').style.display='none'" class="cancelbtn_signup">Cancel</button>
+        <button type="button" for="button_signup" onclick="document.getElementById('id011').style.display='none'" class="cancelbtn_signup">Cancel</button>
         <button for="button_signup" type="submit" class="signupbtn">Sign Up</button>
       </div>
     </div>

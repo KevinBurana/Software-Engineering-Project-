@@ -1,13 +1,13 @@
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 11-11-2019
+    last modified: 11-29-2019
 
     you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/login.php
 
 -->
 
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+body[for="body_login"]{font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
 input[type=text_login], input[type=password] {
@@ -143,11 +143,12 @@ function login()
 function login()
 {
    ?>
-   <body>
+   <body for="body_login">
         <button for="button_login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 	<div id="id01" class="modal_login">
-            <form class="modal-content animate" action="home.php" method="post">
+            <form class="modal-content animate" method="post" action="<?= htmlentities($_SERVER['PHP_SELF'], 
+                                        ENT_QUOTES) ?>">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close_login" title="Close Modal">&times;</span>
                <img src="img_avatar2.png" alt="Avatar" class="avatar">

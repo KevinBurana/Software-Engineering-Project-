@@ -11,8 +11,6 @@ function destroy_sesh()
 function destroy_sesh($complaint)
 {
     ?>
-    <p> CANNOT CONTINUE: <?= $complaint ?> 
-    </p>
     <p> <a href="<?= htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES) ?>">
         Try again </a> </p>
     <?php
