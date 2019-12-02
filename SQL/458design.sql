@@ -46,9 +46,9 @@
 
 	create table Users
 	( User_id	char(6) not null,
-	  phone	        char(12),
-	  email	        varchar2(30),
-	  password	varchar2(30),
+	  U_phone	        char(12),
+	  U_email	        varchar2(30),
+	  U_pass	varchar2(30),
 	  primary key	(User_id)
 	);
 
