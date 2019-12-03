@@ -7,7 +7,7 @@
 
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 11-29-2019
+    last modified: 12-02-2019
 
     you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/splash-page.php
 
@@ -40,6 +40,22 @@
     }
     elseif ($_SESSION["next_state"] == "home")
     {
+        if ( (! array_key_exists("uname", $_POST)) or
+         (! array_key_exists("psw", $_POST)) or
+         ($_POST["uname"] == "") or
+         ($_POST["psw"] == "") or
+         (! isset($_POST["uname"])) or
+         (! isset($_POST["psw"])) )
+       {
+          session_destroy();
+       }
+
+       $username = strip_tags($_POST["uname"]);
+       $password = $_POST["psw"];
+
+       $_SESSION["uname"] = $username;
+       $_SESSION["psw"] = $password;
+
        get_home_info();
     }
     ?>

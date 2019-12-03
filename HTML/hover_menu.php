@@ -1,6 +1,6 @@
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 11-29-2019
+    last modified: 12-02-2019
 
     you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/hover_menu.php
 
@@ -60,10 +60,11 @@ function hover_menu()
       <div class="dropdown">
         <button class="dropbtn">Menu</button>
         <div class="dropdown-content">
-          <a href="#">Show All Trails</a>
+          <form method="post" >
+          <a href="#">Show All Trails </a>
           <a href="#">My Suggested Trails</a>
-          <a href="#">Questionaire</a>
-          <a href="#">Logout</a>
+          <a href="logout.php">Logout</a>
+          </form>
         </div>
       </div>
 </body>
