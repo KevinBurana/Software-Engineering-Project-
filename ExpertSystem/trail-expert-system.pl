@@ -1,6 +1,6 @@
 /* Ashleigh Robie
 CS 458 - Trail Expert System
-Last modified: 11-14-2019 */
+Last modified: 12-2-2019 */
 
 
 %% FACTS 
