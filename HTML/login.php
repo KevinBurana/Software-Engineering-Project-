@@ -1,8 +1,8 @@
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 11-29-2019
+    last modified: 12-03-2019
 
-    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/login.php
+    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone-test/login.php
 
 -->
 
@@ -72,7 +72,7 @@ span.psw {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   padding-top: 60px;
@@ -83,7 +83,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
