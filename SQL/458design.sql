@@ -67,6 +67,7 @@
 	  Us_Camp_q		char(1),
 	  Us_Hike_q		char(1),
 	  Us_Fish_q		char(1),
+	  Us_
 	  Us_Time_out		varchar2(10),
 	  Us_Outdoors_lvl  	varchar2(15),
 	  Us_Pet_q		char(1),

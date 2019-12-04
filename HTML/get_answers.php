@@ -17,41 +17,62 @@
             $conn = hsu_conn($username, $password);
 
 
-            // read in inputs to mark what to input into the database
-            if($_POST['place'] == "forest")
+            // sanitizes trip-start 
+            $trip_start = htmlspecialchars(strip_tags($_POST["trip-start"]));
+
+            //sanitizes trip_place
+            $trip_place = htmlspecialchars(strip_tags($_POST["place"]));
+            // sets trip_place from input
+            if($trip_place == "forest")
             {
-                    $trip_place = "forest";
+                    $us_forest = "1";
+                    $us_river == "0";
+                    $us_beach == "0";
             }
-            elseif($_POST['place'] == "river")
+            elseif($trip_place == "river")
             {
-                $trip_place = "river";
+                $us_forest = "0";
+                $us_river == "1";
+                $us_beach == "0";
             }
             else
             {
-                $trip_place = "beach";
+                $us_forest = "0";
+                $us_river == "0";
+                $us_beach == "1";
             }
-         
-            //sanitizing form inputs 
-            
-            $trip_start = htmlspecialchars(strip_tags($_POST["trip-start"]));
-            $trip_place = htmlspecialchars(strip_tags($_POST["place"]));
-            $trip_act1 = htmlspecialchars(strip_tags($_POST["activity1"]));
-            $trip_act2 = htmlspecialchars(strip_tags($_POST["activity2"]));
-            $trip_act3 = htmlspecialchars(strip_tags($_POST["activity3"]));
-            $trip_act4 = htmlspecialchars(strip_tags($_POST["activity4"]));
-            $trip_act5 = htmlspecialchars(strip_tags($_POST["activity5"]));
-            $trip_act6 = htmlspecialchars(strip_tags($_POST["activity6"]));
-            $trip_act7 = htmlspecialchars(strip_tags($_POST["activity7"]));
-            $trip_act8 = htmlspecialchars(strip_tags($_POST["activity8"]));
+
+            //sanitizing activity array
+            $trip_act = htmlspecialchars(strip_tags($_POST["activity"]));
+            // saves each value based on if checked
+            foreach($trip_act as $activity)
+            {
+                if(isset($activity))
+                {
+                    $activity = "1";
+                }
+                else
+                    $activity = "0";
+            }
+
+            // trip_hours variable
             $trip_hours = $_POST["hours"];
+
+            // sanitizes user experience and pet going
             $user_exp = htmlspecialchars(strip_tags($_POST["diff"]));
-            $pet_yes = htmlspecialchars(strip_tags($_POST["yes"]));
-            $pet_no = htmlspecialchars(strip_tags($_POST["no"]));
-         
+            $pet_go= htmlspecialchars(strip_tags($_POST["pet"]));
+            
+            // sets go value based on yes (1) or no (0)
+            if($pet_go == "yes")
+            {
+                $pet_go = "1";
+            }
+            else
+                $pet_go = "0";
          
              // SQL insert string
-            $query_str = "insert into UserQAns(
-                             values :trip-start";
+            $query_str = "insert into UserQAns(nextval.User_QAns_sequence, 
+                             values  :trip-start";
              // querying SQL string through connection
             $query_stmt = oci_parse($conn, $query_str);
          
