@@ -24,16 +24,17 @@
        require_once("hsu_conn.php");
        require_once("get_home_info.php");
        require_once("destroy_sesh.php");
+       require_once("show_trails.php");
     ?>
 </head>
 
 <body>
 
-    <center> <h1> Humboldt ! </h1> </center>
+    <center> <h1> Humboldt Hike! </h1> </center>
 
     <?php
     if ( ! array_key_exists("next_state", $_SESSION) )
-    {
+    {   
        signup();
        login();
        $_SESSION["next_state"] = "home";
@@ -57,9 +58,18 @@
        $_SESSION["psw"] = $password;
 
        get_home_info();
+       $_SESSION["next_state"] = "trails";
+    }
+    elseif ($_SESSION["next_state"] == "trails")
+    {
+       show_trails();
+       $_SESSION["next_state"] = "home";
+    }
+    elseif ($_SESSION["next_state"] == "home" && (array_key_exists("all_done", $_POST)))
+    {
+       get_home_info();
     }
     ?>
-
     
 </body>
 </html>
