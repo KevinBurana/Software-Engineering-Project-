@@ -19,7 +19,7 @@
 
 </head>
 <body>
-<form>
+<form method = "POST" action = "get_answers.php">
  <fieldset for="questions">
   <legend> Please answer the following questions  </legend>
     <label>
@@ -38,14 +38,14 @@
 
     <label>
         <strong> What activity would you like to do? </strong> <br/>
-        <input type ="checkbox" name="activity1" value="camp"/> Camping
-        <input type ="checkbox" name="activity2" value="hike"/> Hiking 
-        <input type ="checkbox" name="activity3" value="fishing"/> Fishing
-        <input type ="checkbox" name="activity4" value="mountainbike"/> Mountain Biking <br/>
-        <input type ="checkbox" name="activity5" value="kayak"/> Kayaking  
-        <input type ="checkbox" name="activity6" value="paddleboard"/> Paddle Boarding  
-        <input type ="checkbox" name="activity7" value="surf"/> Surfing 
-        <input type ="checkbox" name="activity8" value="other"/> Other 
+        <input type ="checkbox" name="activity[]" value="camp"/> Camping
+        <input type ="checkbox" name="activity[]" value="hike"/> Hiking 
+        <input type ="checkbox" name="activity[]" value="fishing"/> Fishing
+        <input type ="checkbox" name="activity[]" value="mountainbike"/> Mountain Biking <br/>
+        <input type ="checkbox" name="activity[]" value="kayak"/> Kayaking  
+        <input type ="checkbox" name="activity[]" value="paddleboard"/> Paddle Boarding  
+        <input type ="checkbox" name="activity[]" value="surf"/> Surfing 
+        <input type ="checkbox" name="activity[]" value="other"/> Other 
     </label> <br/><br/>
    
     <label>
@@ -62,10 +62,9 @@
 
     <label>
         <strong> Will you be bringing pets? </strong>
-        <input type ="radio" name="yes" value="yes"/> Yes  
-        <input type ="radio" name="no" value="no"/> No  
+        <input type ="radio" name="pet[]" value="yes"/> Yes  
+        <input type ="radio" name="pet[]" value="no"/> No  
     </label> <br/>
-
 	<hr>
     <input type="submit" value="Submit"> 
  </fieldset>

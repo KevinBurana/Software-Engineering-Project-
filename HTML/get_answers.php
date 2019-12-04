@@ -3,49 +3,92 @@
 
     function get_answers()
     {
-        /*
-        if ( (! array_key_exists("uname", $_POST)) or
-        (! array_key_exists("psw", $_POST)) or
-        ($_POST["uname"] == "") or
-        ($_POST["psw"] == "") or
-        (! isset($_POST["uname"])) or
-        (! isset($_POST["psw"])) )
+        if(isset($_POST["submit"]))
         {
-            session_destroy();
+            $username = strip_tags($_POST["uname"]);
+            $password = $_POST["psw"];
+         if(isset($_SESSION['uname']) && isset($_SESSION['psw']))
+         {
+            $_SESSION["uname"] = $username;
+            $_SESSION["psw"] = $password;
+         }
+        
+          
+            $conn = hsu_conn($username, $password);
+
+
+            // read in inputs to mark what to input into the database
+            if($_POST['place'] == "forest")
+            {
+                    $trip_place = "forest";
+            }
+            elseif($_POST['place'] == "river")
+            {
+                $trip_place = "river";
+            }
+            else
+            {
+                $trip_place = "beach";
+            }
+         
+            //sanitizing form inputs 
+            
+            $trip_start = htmlspecialchars(strip_tags($_POST["trip-start"]));
+            $trip_place = htmlspecialchars(strip_tags($_POST["place"]));
+            $trip_act1 = htmlspecialchars(strip_tags($_POST["activity1"]));
+            $trip_act2 = htmlspecialchars(strip_tags($_POST["activity2"]));
+            $trip_act3 = htmlspecialchars(strip_tags($_POST["activity3"]));
+            $trip_act4 = htmlspecialchars(strip_tags($_POST["activity4"]));
+            $trip_act5 = htmlspecialchars(strip_tags($_POST["activity5"]));
+            $trip_act6 = htmlspecialchars(strip_tags($_POST["activity6"]));
+            $trip_act7 = htmlspecialchars(strip_tags($_POST["activity7"]));
+            $trip_act8 = htmlspecialchars(strip_tags($_POST["activity8"]));
+            $trip_hours = $_POST["hours"];
+            $user_exp = htmlspecialchars(strip_tags($_POST["diff"]));
+            $pet_yes = htmlspecialchars(strip_tags($_POST["yes"]));
+            $pet_no = htmlspecialchars(strip_tags($_POST["no"]));
+         
+         
+             // SQL insert string
+            $query_str = "insert into UserQAns(
+                             values :trip-start";
+             // querying SQL string through connection
+            $query_stmt = oci_parse($conn, $query_str);
+         
+            oci_bind_by_name($query_stmt, ":trip-start", $trip_start);
+            oci_bind_by_name($query_stmt, ":place", $trip_place);
+            oci_bind_by_name($query_stmt, ":activity1", $trip_act1);
+            oci_bind_by_name($query_stmt, ":activity2", $trip_act2);
+            oci_bind_by_name($query_stmt, ":activity3", $trip_act3);
+            oci_bind_by_name($query_stmt, ":activity4", $trip_act4);
+            oci_bind_by_name($query_stmt, ":activity5", $trip_act5);
+            oci_bind_by_name($query_stmt, ":activity6", $trip_act6);
+            oci_bind_by_name($query_stmt, ":activity7", $trip_act7);
+            oci_bind_by_name($query_stmt, ":activity8", $trip_act8);
+            oci_bind_by_name($query_stmt, ":hours", $trip_hours);
+            oci_bind_by_name($query_stmt, ":diff", $user_exp);
+            oci_bind_by_name($query_stmt, ":yes", $pet_yes);
+            oci_bind_by_name($query_stmt, ":no", $pet_no);
+         
+         
+            oci_commit($conn);
+            oci_free_state($query_stmt);
+            oci_close($conn);
+         
+            oci_execute($dept_loc_stmt, OCI_DEFAULT);
+        
+         
+            oci_fetch($query_stmt);
+            $chosen_name = oci_result($query_stmt, "US_ACT_DATE");
+            
+           
+            echo $chosen_name
         }
-*/
-   $username = strip_tags($_POST["uname"]);
-   $password = $_POST["psw"];
 
-   $_SESSION["uname"] = $username;
-   $_SESSION["psw"] = $password;
- 
-   $conn = hsu_conn($username, $password);
-
-   //sanitize form inputs 
- 
-   $dept_choice = htmlspecialchars(strip_tags($_POST["trip-start"]));
-
-   // try to query chosen department's name and location
-   //     (want to make sure get this even if empl has NO
-   //     employees!)
-
-   $dept_loc_str = "insert into UserQAns(Us_act_date)
-                    values :trip-start";
-
-   $dept_loc_stmt = oci_parse($conn, $dept_loc_str);
-
-   oci_bind_by_name($dept_loc_stmt, ":trip-start", $dept_choice);
-   oci_execute($dept_loc_stmt);
-
-   // SHOULD only be ONE row in this result, but STILL must
-   //     call oci_fetch to get it!
-
-   oci_fetch($dept_loc_stmt);
-   $chosen_name = oci_result($dept_loc_stmt, "US_ACT_DATE");
-   oci_free_statement($dept_loc_stmt);
-  
-   echo $chosen_name
+        else{
+            echo 'Script failed';
+        }
+   
     }
 
 ?>
