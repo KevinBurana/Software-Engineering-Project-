@@ -175,7 +175,7 @@
 	alter table UserQAns add foreign key (S_id) references Sessions(S_id);
 */
 
-
+@ populate-tables.sql
 
 
 
