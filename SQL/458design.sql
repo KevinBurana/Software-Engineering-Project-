@@ -67,6 +67,11 @@
 	  Us_Camp_q		char(1),
 	  Us_Hike_q		char(1),
 	  Us_Fish_q		char(1),
+	  Us_MountB_q 	char(1),
+	  Us_Kayak_q	char(1),
+	  Us_PaddleB_q	char(1),
+	  Us_Surf_q		char(1),
+	  Us_Other_q	char(1),
 	  Us_Time_out		varchar2(10),
 	  Us_Outdoors_lvl  	varchar2(15),
 	  Us_Pet_q		char(1),
@@ -88,6 +93,11 @@
 	  Camp_q	char(1),
 	  Hike_q	char(1),
 	  Fish_q	char(1),
+	  MountB_q 	char(1),
+	  Kayak_q	char(1),
+	  PaddleB_q	char(1),
+	  Surf_q		char(1),
+	  Other_q	char(1),
 	  Time_out	varchar2(10),
 	  Outdoors_lvl  varchar2(15),
 	  Pet_q		char(1),
@@ -175,7 +185,7 @@
 	alter table UserQAns add foreign key (S_id) references Sessions(S_id);
 */
 
-@ populate-tables.sql
+
 
 
 
