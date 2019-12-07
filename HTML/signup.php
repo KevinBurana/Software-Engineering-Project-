@@ -1,8 +1,8 @@
 <!--
     by: Ashleigh, Kevin, Shaan, Tyrone
-    last modified: 11-29-2019
+    last modified: 11-11-2019
 
-    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/signup.php
+    you can run this using the URL: http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone-test/splash-page.php
 
 -->
 
@@ -54,6 +54,7 @@ button:hover {
   float: left;
   width: 50%;
 }
+
 
 /* Add padding to container elements */
 .container_signup {
@@ -126,7 +127,7 @@ function sign-up()
 function signup()
 {
    ?>
-   <body for="body_signup">
+   <body for="body_signup" >
        <button for="button_signup" onclick="document.getElementById('id011').style.display='block'" style="width:auto;">Sign Up</button>
 
        <div id="id011" class="modal_signup">
@@ -144,7 +145,7 @@ function signup()
       	    <input type="text_signup" placeholder="Enter Phone Number" name="phone" required>
 
       	    <label for="psw"><b>Password</b></label>
-      	    <input type="password_signup" placeholder="Enter Password" name="psw" required>
+      	    <input type="password" placeholder="Enter Password" name="psw" required>
 
       	    <label for="psw-repeat"><b>Repeat Password</b></label>
       	    <input type="password_signup" placeholder="Repeat Password" name="psw-repeat" required>
@@ -153,7 +154,7 @@ function signup()
 
       <div class="clearfix">
         <button type="button" for="button_signup" onclick="document.getElementById('id011').style.display='none'" class="cancelbtn_signup">Cancel</button>
-        <button for="button_signup" type="submit" class="signupbtn">Sign Up</button>
+        <button type="submit" for="button_signup" class="signupbtn">Sign Up</button>
       </div>
     </div>
   </form>

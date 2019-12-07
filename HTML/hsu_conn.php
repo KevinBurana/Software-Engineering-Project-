@@ -32,7 +32,7 @@
             ?>
             session_destroy();
             <p> Could not log into Oracle, sorry. </p>
-            <p> Click <a href="http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone/splash-page.php">here</a> to start over. </p>
+            <p> Click <a href="http://nrs-projects.humboldt.edu/~kb2017/SE-Capstone-test/splash-page.php">here</a> to start over. </p>
         <?php
             exit;        
         }
