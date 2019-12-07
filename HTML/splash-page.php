@@ -32,6 +32,13 @@
 
     <center> <h1> Humboldt Hike! </h1> </center>
 
+    <p>
+        <script type='text/javascript' src='https://darksky.net/widget/default/40.8688,-124.0823/us12/en.js?width=100%&height=350&title=Arcata, CA&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=333333&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
+    </p>
+
+    <p>
+        <script type='text/javascript' src='https://darksky.net/widget/graph-bar/40.8688,-124.0823/us12/en.js?width=100%&height=400&title=Full Forecast&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=333333&currentDetailsOption=true'></script>
+    </p>
     <?php
     if ( ! array_key_exists("next_state", $_SESSION) )
     {   
@@ -70,6 +77,8 @@
        get_home_info();
     }
     ?>
+
+    
     
 </body>
 </html>

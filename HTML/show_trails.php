@@ -51,9 +51,8 @@ function show_trails()
         </table>
         <form method="post" action="<?= htmlentities($_SERVER['PHP_SELF'], 
                                         ENT_QUOTES) ?>">
-        <fieldset>
-                   <label for="home_page"> Home Page </label> 
-                   <input type="submit" name="all_done" value="back_home" />
+        <fieldset> 
+                   <input type="submit" name="all_done" value="Home Page" />
         </fieldset>
              </form>
         </center>

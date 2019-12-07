@@ -41,6 +41,11 @@ function get_home_info()
        hover_menu();
        modal_question();
     ?>
+    
+    <?php
+      require_once("intro_home.html");
+   ?>
+
 
 </body>
 <?php
