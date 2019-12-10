@@ -1,0 +1,14 @@
+#introduction 
+{
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 30px; 
+  margin:0 auto;
+  width: 500px;
+}
+#bg
+{
+background-image: url("wet-forest.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
