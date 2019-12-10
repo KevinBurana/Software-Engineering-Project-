@@ -15,11 +15,15 @@
 <h1> Adventure Questionnaire </h1>
 
 <hr>
+<?php 
+        require_once("get_answers.php")
+
+?>
 
 
 </head>
 <body>
-<form>
+<form method = "POST" action = "get_answers.php">
  <fieldset for="questions">
   <legend> Please answer the following questions  </legend>
     <label>
@@ -70,5 +74,9 @@
     <input type="submit" value="Submit"> 
  </fieldset>
 </form>
+
+    <?php
+            get_answers();
+    ?>
 </body>
 </html>
