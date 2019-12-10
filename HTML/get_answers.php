@@ -87,6 +87,7 @@
             echo "hello";
             echo $chosen_query;
         }
+        
         echo "failed";
     }
 
