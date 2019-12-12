@@ -5,8 +5,7 @@ Last modified: 12-2-2019 */
 
 %% FACTS 
 
-%% trail KB
-/*
+%% trails with primary keys
 trail(000001).
 trail(000002).
 trail(000003).
@@ -33,9 +32,6 @@ trail(000023).
 trail(000024).
 trail(000025).
 trail(000026).
-*/
-
-
 
 %% trail difficulty
 tDifficulty(beginner).
@@ -44,16 +40,13 @@ tDifficulty(moderate).
 tDifficulty(experienced).
 
 %% user experience level
-uExperience(beginner).
+uExperience(novice).
 uExperience(moderate).
 uExperience(experienced).
 
 %% pet adventure: 0 - no pet; 1 - pet 
 petGo(0).
 petGo(1).
-
-%% duration outside; turn into minutes? given in hours
-activityDuration().
 
 %% check what weather sites use
 %% weather forecast
@@ -64,5 +57,30 @@ forecast(snow).
 forecast(rain).
 forecast(showers).
 
-%% RULES 
+%% weather that is ok for beginners to travel
+noviceWeather :- forecast(sunny), !.
+noviceWeather :- forecast(cloudy), !.
+noviceWeather :- forecast(foggy).
+
+%% weather that is okay for moderate hikers
+moderateWeather :- noviceWeather, !.
+moderateWeather :- forecast(rain).
+
+%% all weather conditions are okay for experienced hikers
+advanceWeather :- moderateWeather, !.
+advanceWeather :- forecast(snow), !.
+advanceWeather :- forecast(showers).
+
+%% trail difficult appropiate for novice hikers
+noviceTrail :- tDifficulty(beginner).
+
+%% trail difficult appropiate for moderate hikers
+moderateTrail :- noviceTrail, !.
+moderateTrail :- tDifficulty(easy), !.
+moderateTrail :- tDifficulty(moderate).
+
+%% trail difficult appropiate for experienced hikers
+advanceTrail :- moderateTrail, !.
+advanceTrail :- tDifficulty(experienced).
+
 
