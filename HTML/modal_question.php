@@ -85,7 +85,7 @@ function modal_question()
      <div class="modal-content-question">
        <span class="close_question">&times;</span>
           <?php
-             require_once("questions.php");
+             require_once("questions.html");
           ?>
      </div>
 
